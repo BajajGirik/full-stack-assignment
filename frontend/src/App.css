@@ -63,6 +63,9 @@
   margin-bottom: 30px;
   padding-bottom: 20px;
   border-bottom: 2px solid #f0f0f0;
+  min-height: 60px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .user-list-header h2 {
@@ -70,6 +73,7 @@
   font-size: 24px;
   font-weight: 600;
   color: #262626;
+  flex-shrink: 0;
 }
 
 .user-table {
