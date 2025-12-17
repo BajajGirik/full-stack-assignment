@@ -10,22 +10,41 @@ import CustomInput from "./CustomInput";
   const LoginPage = ({ authState, setAuthState, handleLogin }: Props) => {
     // Implement login form and authentication
     return (
-      <div>
-        <CustomInput
-          name="Username"
-          value={authState.email}
-          onChange={(e) =>
-            setAuthState({ ...authState, email: e.target.value })
-          }
-        />
-        <CustomInput
-          name="Password"
-          value={authState.password}
-          onChange={(e) =>
-            setAuthState({ ...authState, password: e.target.value })
-          }
-        />
-        <Button onClick={handleLogin}>Login</Button>
+      <div className="login-container">
+        <div className="login-card">
+          <h1 className="login-title">Welcome Back</h1>
+          <p className="login-subtitle">Please login to continue</p>
+          
+          <div className="login-form">
+            <CustomInput
+              name="Username"
+              value={authState.email}
+              onChange={(e) =>
+                setAuthState({ ...authState, email: e.target.value })
+              }
+              placeholder="Email..."
+              hideLabel
+            />
+            <CustomInput
+              name="Password"
+              value={authState.password}
+              onChange={(e) =>
+                setAuthState({ ...authState, password: e.target.value })
+              }
+              placeholder="Password..."
+              hideLabel
+            />
+            <Button 
+              type="primary" 
+              onClick={handleLogin}
+              size="large"
+              block
+              className="login-button"
+            >
+              Login
+            </Button>
+          </div>
+        </div>
       </div>
     );
   };

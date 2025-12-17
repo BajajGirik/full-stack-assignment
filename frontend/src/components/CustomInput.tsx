@@ -5,17 +5,20 @@ type Props = {
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  hideLabel?: boolean;
+  placeholder?: string;
 };
 
-const CustomInput = ({ id, name, value, onChange }: Props) => {
+const CustomInput = ({ id, name, value, onChange, hideLabel, placeholder }: Props) => {
   return (
     <div>
-      <label htmlFor={id}>{name}</label>
+      {hideLabel ? null : <label htmlFor={id}>{name}</label>}
       <Input
         id={id}
         value={value}
         onChange={onChange}
-        placeholder="Enter text here"
+        placeholder={placeholder ?? "Enter text here"}
+        size="large"
       />
     </div>
   );

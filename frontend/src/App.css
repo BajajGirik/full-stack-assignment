@@ -134,3 +134,70 @@
 .user-table tbody tr td:last-child {
   text-align: left;
 }
+
+/* Login Page Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.login-title {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #262626;
+  text-align: center;
+}
+
+.login-subtitle {
+  margin: 0 0 32px 0;
+  font-size: 14px;
+  color: #8c8c8c;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-button {
+  margin-top: 8px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+.login-button:hover {
+  background: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.login-form .ant-input-lg {
+  height: 48px;
+  font-size: 15px;
+}
