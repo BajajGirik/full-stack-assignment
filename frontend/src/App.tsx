@@ -68,6 +68,15 @@ function App() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+    setUsers([]);
+    notification.success({
+      message: 'Logged out successfully',
+    });
+  };
+
   useEffect(() => {
     if (token) {
       getAllUsers();
@@ -84,7 +93,7 @@ function App() {
         />
       ) : (
         <div>
-          <UserList users={users} loading={loading} onAddUser={() => setShowAddUserModal(true)} onEditUser={handleEditUser} onDeleteUser={handleDeleteUser} />
+          <UserList users={users} loading={loading} onAddUser={() => setShowAddUserModal(true)} onEditUser={handleEditUser} onDeleteUser={handleDeleteUser} onLogout={handleLogout} />
           <Modal
             title="Add New User"
             open={showAddUserModal}

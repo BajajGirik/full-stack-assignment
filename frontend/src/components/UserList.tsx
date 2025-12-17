@@ -13,6 +13,7 @@ interface UserListProps {
   onAddUser: () => void;
   onEditUser: (userId: string) => void;
   onDeleteUser: (userId: string) => void;
+  onLogout: () => void;
 }
 
 const UserList: React.FC<UserListProps> = ({
@@ -21,14 +22,20 @@ const UserList: React.FC<UserListProps> = ({
   onAddUser,
   onEditUser,
   onDeleteUser,
+  onLogout,
 }) => {
   return (
     <div className="user-list-container">
       <div className="user-list-header">
         <h2>User Management</h2>
-        <Button type="primary" onClick={onAddUser} size="large">
-          Add New User
-        </Button>
+        <Space>
+          <Button type="primary" onClick={onAddUser} size="large">
+            Add New User
+          </Button>
+          <Button danger onClick={onLogout} size="large">
+            Logout
+          </Button>
+        </Space>
       </div>
 
       {loading ? (

@@ -62,11 +62,10 @@ export const deleteUser = async (userId: string) => {
   }
 };
 
-export const updateUser = async (userId: string, name: string, email: string) => {
+export const updateUser = async (userId: string, name: string) => {
   try {
     const response = await axios.put(`/users/${userId}`, {
       name,
-      email,
     }, {
       headers: {
         Authorization: localStorage.getItem("token") || "",

@@ -83,21 +83,21 @@
 }
 
 .user-table thead tr th {
-  padding: 16px 24px;
+  padding: 24px 60px;
   text-align: left;
   font-weight: 600;
   color: #262626;
   border-bottom: 2px solid #f0f0f0;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .user-table thead tr th:first-child {
-  padding-left: 32px;
+  padding-left: 60px;
 }
 
 .user-table thead tr th:last-child {
-  padding-right: 32px;
+  padding-right: 60px;
 }
 
 .user-table tbody tr {
@@ -110,21 +110,21 @@
 }
 
 .user-table tbody tr td {
-  padding: 16px 24px;
+  padding: 24px 60px;
   color: #595959;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
   vertical-align: middle;
 }
 
 .user-table tbody tr td:first-child {
-  padding-left: 32px;
+  padding-left: 60px;
   font-weight: 500;
   color: #262626;
 }
 
 .user-table tbody tr td:last-child {
-  padding-right: 32px;
+  padding-right: 60px;
 }
 
 .user-table tbody tr td:last-child {
