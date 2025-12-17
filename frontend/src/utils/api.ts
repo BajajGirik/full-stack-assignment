@@ -47,3 +47,34 @@ export const addUser = async (name: string, email: string, password: string) => 
     return null;
   }
 };
+
+export const deleteUser = async (userId: string) => {
+  try {
+    const response = await axios.delete(`/users/${userId}`, {
+      headers: {
+        Authorization: localStorage.getItem("token") || "",
+      },
+    });
+
+    return response.data as any;
+  } catch (err) {
+    return null;
+  }
+};
+
+export const updateUser = async (userId: string, name: string, email: string) => {
+  try {
+    const response = await axios.put(`/users/${userId}`, {
+      name,
+      email,
+    }, {
+      headers: {
+        Authorization: localStorage.getItem("token") || "",
+      },
+    });
+
+    return response.data as any;
+  } catch (err) {
+    return null;
+  }
+};
