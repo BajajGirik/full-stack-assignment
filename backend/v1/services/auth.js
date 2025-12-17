@@ -8,7 +8,7 @@ const checkPassword = async (user, password) => {
 }
 
 const loginUser = async (email, password) => {
-    const user = USERS.find(u => email);
+    const user = USERS.find(u => u.email === email);
 
     if (!user) {
         throw new APIError("User not found", 404);

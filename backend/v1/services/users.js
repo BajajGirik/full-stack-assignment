@@ -6,22 +6,27 @@ const NEXT_ID = OBJ.NEXT_ID;
 
 const getPaginatedUsers = (page = 1, limit = 10) => {
   return {
-    users: USERS.slice((page - 1) * limit, page * limit),
+    users: USERS.slice((page - 1) * limit, page * limit).map((u) => ({
+      id: u.id,
+      name: u.name,
+      email: u.email,
+      role: u.role,
+    })),
     count: USERS.length,
   };
 };
 
 const addUser = (userData) => {
-  const existingUser = USERS.find(u => u.email === userData.email);
+  const existingUser = USERS.find((u) => u.email === userData.email);
   if (existingUser) {
     throw new APIError("Email already in use", 409);
   }
 
   const newUser = {
-    id: NEXT_ID, // USERS.length + 1
+    id: OBJ.NEXT_ID, // USERS.length + 1
     name: userData.name,
     email: userData.email,
-    password: bcrypt.hashSync(userData.password, 10),
+    passwordHash: bcrypt.hashSync(userData.password, 10),
     role: "user",
   };
 
@@ -32,7 +37,7 @@ const addUser = (userData) => {
 };
 
 const updateUser = (userId, userData) => {
-  const user = USERS.find(u => u.id == userId);
+  const user = USERS.find((u) => u.id == userId);
   if (!user) {
     throw new APIError("User not found", 404);
   }
@@ -45,17 +50,17 @@ const updateUser = (userId, userData) => {
 };
 
 const deleteUser = (userId) => {
-  const userIndex = USERS.findIndex(u => u.id == userId);
+  const userIndex = USERS.findIndex((u) => u.id == userId);
   if (userIndex === -1) {
     throw new APIError("User not found", 404);
   }
 
   USERS.splice(userIndex, 1);
-}
+};
 
 module.exports = {
   getPaginatedUsers,
   addUser,
   updateUser,
-  deleteUser
+  deleteUser,
 };
